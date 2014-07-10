@@ -1,6 +1,15 @@
 
 <div class="jumbotron">
-<h1>Welcome to Pintato</h1>
-<p>Click here to <%= link_to "Buy a Pintato", "#" , class: "btn btn-primary btn-lg" %></p>
+	<h1>Welcome to Pintato</h1>
+		<% if user_signed_in? %>
+			Pintato master, this is your world!
+		<% else %>
+	<p>Click here to <%= link_to "Log your Pintato in!", new_user_session_path, class: "btn btn-default btn-lg" %>
+<%= link_to "Sign your Pintato up!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+
+	</p>
+<% end %>	
+
 </div>
+
 <p>Don't forget to buy your <em>pintato</em>.</p>
